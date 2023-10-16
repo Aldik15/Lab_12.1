@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Получение имени и возраста</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    #ageButton {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <button id="ageButton">Получить имя и возраст</button>
+  <script>
+    document.getElementById("ageButton").addEventListener("click", function() {
+      var name = prompt("Введите ваше имя:");
+      var birthYear = prompt("Введите год вашего рождения:");
+
+      if (name !== null && birthYear !== null) {
+        var currentYear = new Date().getFullYear();
+        var age = currentYear - parseInt(birthYear);
+        document.write(name + ": " + age);
+      } else {
+        alert("Отменено");
+      }
+    });
+  </script>
+</body>
+</html>
